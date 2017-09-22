@@ -172,18 +172,29 @@ $(document).ready(function(){
  function checkDiv()
 {
     var text = $( "#result" ).text();
-    if(text.length>5)
+    console.log("Prev text = " + text);
+    if(text.length>0)
     {
       console.log("text is: " + text);
-      flag=1;
+      console.log("STOPPEDDDDD");
+      flag =1;
+        $.ajax({
+                type: "GET", 		//GET or POST
+                url: 'https://api.myjson.com/bins/102y5t', 		// Location of the service
+                dataType: "json", 	//Expected data format from server
+                processdata: true 	//True or False
+            }).done(function (data) {
+                console.log(data);
+            });
     }
-    if(flag=1)
+    if(flag==1)
     {
       clearInterval(myTimer);
     }
+
 }
 
-  var myTimer =  setInterval('checkDiv()', 1000); // this will reload page after every 5 secounds; Method II
+   var myTimer = setInterval('checkDiv()', 1000); // this will reload page after every 5 secounds; Method II
 
 </script>
 </td></tr>
