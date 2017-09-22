@@ -172,18 +172,18 @@ $(document).ready(function(){
  function checkDiv()
 {
     var text = $( "#result" ).text();
-    if(text.length>0)
+    if(text.length>5)
     {
       console.log("text is: " + text);
       flag=1;
     }
     if(flag=1)
     {
-      return;
+      clearInterval(myTimer);
     }
 }
 
-  setInterval('checkDiv()', 1000); // this will reload page after every 5 secounds; Method II
+  var myTimer =  setInterval('checkDiv()', 1000); // this will reload page after every 5 secounds; Method II
 
 </script>
 </td></tr>
