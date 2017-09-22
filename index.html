@@ -133,7 +133,7 @@ li a{
 <body>
 <div id="main">
 <div id="header">
-<div style="position:relative;top:+20px;left:0px;"><g:plusone size="medium"></g:plusone></div>
+<!-- <div style="position:relative;top:+20px;left:0px;"><g:plusone size="medium"></g:plusone></div> -->
 <p id="mp1">
 QR Code scanner
 </p>
@@ -168,30 +168,27 @@ $(document).ready(function(){
     console.log("The jQuery is working");
 
 });
+  var flag =0;
  function checkDiv()
 {
-  var text = $( "result" ).text();
-  console.log("text is: " + text);
+    var text = $( "#result" ).text();
+    if(text.length>0)
+    {
+      console.log("text is: " + text);
+      flag=1;
+
+    }
+    if(flag=1)
+    return 0;
 }
 
  setInterval('checkDiv()', 1000); // this will reload page after every 5 secounds; Method II
 </script>
 </td></tr>
 </table>
-<!-- <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> -->
-<!-- webqr_2016 -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-8418802408648518"
-     data-ad-slot="2527990541"
-     data-ad-format="auto"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
+
 </div>&nbsp;
 <div id="footer">
-<img style="position:relative;top:0px;left:0px;margin:0;padding:0;" src="comodo_secure_seal_100x85_transp.png"/>
-<h5 align="center">Copyright &copy; 2011 <a target="_blank" href="http://www.lazarsoft.info">Lazar Laszlo</a></h5>
 </div>
 </div>
 <canvas id="qr-canvas" width="800" height="600"></canvas>
