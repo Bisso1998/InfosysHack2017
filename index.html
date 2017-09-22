@@ -137,12 +137,12 @@ li a{
 <p id="mp1">
 QR Code scanner
 </p>
-<ul>
+<!-- <ul>
 <li><a href="index.html">Scan</a></li>
 <li><a href="create.html">Create</a></li>
 <li><a href="about.html">About</a></li>
 <li style="border: medium none;"><a href="contact.html">Contact</a></li>
-</ul>
+</ul> -->
 </div>
 <div id="mainbody">
 <table class="tsel" border="0" width="100%">
@@ -176,13 +176,15 @@ $(document).ready(function(){
     {
       console.log("text is: " + text);
       flag=1;
-
     }
     if(flag=1)
-    return 0;
+    {
+      return;
+    }
 }
 
- setInterval('checkDiv()', 1000); // this will reload page after every 5 secounds; Method II
+  setInterval('checkDiv()', 1000); // this will reload page after every 5 secounds; Method II
+
 </script>
 </td></tr>
 </table>
