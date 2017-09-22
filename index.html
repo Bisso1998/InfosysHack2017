@@ -9,6 +9,7 @@
   <meta name="robots" content="index, follow"/>
   <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
 <title>Web QR</title>
 
 <style type="text/css">
@@ -109,11 +110,10 @@ li a{
 }
 
 </style>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript" src="llqrcode.js"></script>
 <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
 <script type="text/javascript" src="webqr.js"></script>
-
 <script type="text/javascript">
 
   var _gaq = _gaq || [];
@@ -163,6 +163,19 @@ QR Code scanner
 </td></tr>
 <tr><td colspan="3" align="center">
 <div id="result"></div>
+<script>
+$(document).ready(function(){
+    console.log("The jQuery is working");
+
+});
+ function checkDiv()
+{
+  var text = $( "result" ).text();
+  console.log("text is: " + text);
+}
+
+ setInterval('checkDiv()', 1000); // this will reload page after every 5 secounds; Method II
+</script>
 </td></tr>
 </table>
 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -184,5 +197,6 @@ QR Code scanner
 <canvas id="qr-canvas" width="800" height="600"></canvas>
 <script type="text/javascript">load();</script>
 </body>
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
 
 </html>

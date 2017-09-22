@@ -1,6 +1,11 @@
 // QRCODE reader Copyright 2011 Lazar Laszlo
 // http://www.webqr.com
 
+
+
+console.log("Hwllo World");
+
+
 var gCtx = null;
 var gCanvas = null;
 var c=0;
@@ -48,7 +53,7 @@ function drop(e) {
 function handleFiles(f)
 {
 	var o=[];
-	
+
 	for(var i =0;i<f.length;i++)
 	{
         var reader = new FileReader();
@@ -59,7 +64,7 @@ function handleFiles(f)
 			qrcode.decode(e.target.result);
         };
         })(f[i]);
-        reader.readAsDataURL(f[i]);	
+        reader.readAsDataURL(f[i]);
     }
 }
 
@@ -85,12 +90,12 @@ function captureToCanvas() {
             try{
                 qrcode.decode();
             }
-            catch(e){       
+            catch(e){
                 console.log(e);
                 setTimeout(captureToCanvas, 500);
             };
         }
-        catch(e){       
+        catch(e){
                 console.log(e);
                 setTimeout(captureToCanvas, 500);
         };
@@ -108,7 +113,7 @@ function read(a)
         html+="<a target='_blank' href='"+a+"'>"+a+"</a><br>";
     html+="<b>"+htmlEntities(a)+"</b><br><br>";
     document.getElementById("result").innerHTML=html;
-}	
+}
 
 function isCanvasSupported(){
   var elem = document.createElement('canvas');
@@ -128,7 +133,7 @@ function success(stream) {
     gUM=true;
     setTimeout(captureToCanvas, 500);
 }
-		
+
 function error(error) {
     gUM=false;
     return;
@@ -154,7 +159,7 @@ function load()
 
 function setwebcam()
 {
-	
+
 	var options = true;
 	if(navigator.mediaDevices && navigator.mediaDevices.enumerateDevices)
 	{
@@ -180,7 +185,7 @@ function setwebcam()
 		console.log("no navigator.mediaDevices.enumerateDevices" );
 		setwebcam2(options);
 	}
-	
+
 }
 
 function setwebcam2(options)
@@ -189,7 +194,7 @@ function setwebcam2(options)
 	document.getElementById("result").innerHTML="- scanning -";
     if(stype==1)
     {
-        setTimeout(captureToCanvas, 500);    
+        setTimeout(captureToCanvas, 500);
         return;
     }
     var n=navigator;
@@ -233,8 +238,8 @@ function setimg()
     document.getElementById("qrimg").style.opacity=1.0;
     document.getElementById("webcamimg").style.opacity=0.2;
     var qrfile = document.getElementById("qrfile");
-    qrfile.addEventListener("dragenter", dragenter, false);  
-    qrfile.addEventListener("dragover", dragover, false);  
+    qrfile.addEventListener("dragenter", dragenter, false);
+    qrfile.addEventListener("dragover", dragover, false);
     qrfile.addEventListener("drop", drop, false);
     stype=2;
 }
