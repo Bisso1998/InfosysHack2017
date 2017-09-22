@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Firebase</title>
+  <style type="text/css">
+   #fire-container{
+    background: grey;
+    border:black solid;
+   } 
+  </style>
+  <!--initalization from firebase code snippest-->
+
+  <script src="https://www.gstatic.com/firebasejs/4.4.0/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyBr9XlaGm0HONMXSt9bfV6qQgONDxr3gpk",
+      authDomain: "smartqlabs.firebaseapp.com",
+      databaseURL: "https://smartqlabs.firebaseio.com",
+      projectId: "smartqlabs",
+      storageBucket: "smartqlabs.appspot.com",
+      messagingSenderId: "503779783045"
+    };
+    firebase.initializeApp(config);
+  </script>
+
+<!--the code below initializes the signin widget from firebaseUI web-->
+
+    <script src="https://cdn.firebase.com/libs/firebaseui/1.0.0/firebaseui.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/1.0.0/firebaseui.css" />
+    <script type="text/javascript">
+      // FirebaseUI config.
+      var uiConfig = {
+        signInSuccessUrl: 'main.html',
+        signInOptions: [
+          // Leave the lines as is for the providers you want to offer your users.
+          firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+          firebase.auth.EmailAuthProvider.PROVIDER_ID
+        ],
+        // Terms of service url.
+        tosUrl: '<your-tos-url>'
+      };
+      // Initialize the FirebaseUI Widget using Firebase.
+      var ui = new firebaseui.auth.AuthUI(firebase.auth());
+      // The start method will wait until the DOM is loaded.
+      ui.start('#firebaseui-auth-container', uiConfig);
+    </script>
+
+
+</head>
+<body >
+<h1 align="center" style="color: white;border: 20px;">Firebase Auth QuickStart Demo</h1>
+<div class="fire-container">
+<div id="firebaseui-auth-container"></div>
+</div>
+</body>
+</html>
