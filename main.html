@@ -102,13 +102,13 @@
             <p id="mp1">
             </p>
         </div> -->
-        <h4 style="font-family: 'Anton', sans-serif; text-align: center; color: #00AA8">Scan the QR code</h4>
+        <h4 style="font-family: 'Anton', sans-serif; text-align: center; color: #00AA8D">Scan the QR code</h4>
         <div id="mainbody">
             <table class="tsel" border="0" width="100%">
                 <tr>
                     <td valign="top" align="center" width="50%">
                         <table class="tsel" border="0">
-                            <tr>
+                            <tr style="display:none">
                                 <td><img class="selector" id="webcamimg" src="vid.png" onclick="setwebcam()" align="left" /></td>
                                 <td><img class="selector" id="qrimg" src="cam.png" onclick="setimg()" align="right" /></td>
                             </tr>
@@ -122,12 +122,12 @@
                     </td>
                 </tr>
                 <tr>
-                    <td colspan="3" align="center">
+                    <td colspan="3" align="center" style="display: none;">
                         <img src="down.png" />
                     </td>
                 </tr>
                 <tr>
-                    <td colspan="3" align="center">
+                    <td colspan="3" align="center" style="display: none">
                         <div id="result"></div>
                     </td>
                 </tr>
@@ -161,9 +161,9 @@
                      $("#main").hide(1000);
 
                      console.log(data.name);
-                     $("#jsonData").append("<h1>" +text + "</h1> <br>");
+                     $("#jsonData").append("<h6> Queue Hash: " +text + "</h6> <br>");
 
-                     $("#jsonData").append("<b>LAT.</b>" + data.queue.company.latitude + " from " + data.status_code );
+                     $("#jsonData").append("<b>Queue Number:</b>" + data.queue.queue_no + " Counter Id:  " + data.queue.counter_id );
                      $("#jsonData").show(100);
 
                  });
