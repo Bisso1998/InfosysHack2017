@@ -3,11 +3,7 @@ firebase.auth().onAuthStateChanged(function(user) {
     // User is signed in.
 
 
-    //Name
-    var name = document.createElement("h3");
-    var node = document.createTextNode('Welcome '+ user.displayName)
-    name.appendChild(node);
-  	document.getElementById("welcome").appendChild(name);
+
 
   	//Photo
   	var image = document.createElement("IMG");
@@ -15,8 +11,14 @@ firebase.auth().onAuthStateChanged(function(user) {
   	    image.setAttribute("width", "100");
   	    image.setAttribute("height", "100");
   	    image.setAttribute("alt", "Rowhit Swami");
-  	document.getElementById("welcome").appendChild(image);
-  	    
+  	document.getElementById("user-image").appendChild(image);
+
+    //Name
+    var name = document.createElement("h5");
+    var node = document.createTextNode('Welcome, '+ user.displayName)
+    name.appendChild(node);
+    document.getElementById("user-image").appendChild(name);
+
 
   	// Email
   	// var email = document.createElement("P");
