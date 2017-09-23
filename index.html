@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Firebase</title>
+    <title>Login - Smart QLabs</title>
     <style type="text/css">
     #fire-container {
         background: grey;
@@ -87,15 +87,15 @@
 </head>
 
 <body>
-    <h1 align="center" style="color: white;border: 20px;">Firebase Auth QuickStart Demo</h1>
-    <div class="fire-container">
-        <div id="firebaseui-auth-container"></div>
-    </div>
+    <div class="container">
+      <div class="row">
+          <div class="m12 s12 l12 xl12 fire-container">
+              <div id="firebaseui-auth-container"></div>
+          </div>
+      </div>
+  </div>
 
     <script type="text/javascript">
-      //This is the "Offline copy of pages" service worker
-
-      //Add this below content to your HTML page, or add the js file to your page at the very top to register sercie worker
       if (navigator.serviceWorker.controller) {
         console.log('[PWA Builder] active service worker found, no need to register')
       } else {

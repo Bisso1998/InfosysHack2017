@@ -2,7 +2,7 @@
  "name": "Smart QLabs",
  "short_name": "QLabs",
  "lang": "en-US",
- "start_url": "/",
+ "start_url": "https://bisso1998.github.io/InfosysHack2017/",
  "backgroud_color": "#A3A3A3",
  "theme_color": "#3582ff",
  "display": "standalone",
