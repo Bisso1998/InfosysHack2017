@@ -9,6 +9,7 @@ firebase.auth().onAuthStateChanged(function(user) {
   	var image = document.createElement("IMG");
   	    image.setAttribute("src", user.photoURL);
   	    image.setAttribute("width", "100");
+  	    image.setAttribute("border-radius", "50%");
   	    image.setAttribute("height", "100");
   	    image.setAttribute("alt", "Rowhit Swami");
   	document.getElementById("user-image").appendChild(image);
