@@ -9,9 +9,35 @@
     border:black solid;
    } 
   </style>
+
+  <link rel="apple-touch-icon" sizes="57x57" href="image/icons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="image/icons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="image/icons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="image/icons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="image/icons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="image/icons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="image/icons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="image/icons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="image/icons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="image/icons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="image/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="image/icons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="image/icons/favicon-16x16.png">
+  <link rel="manifest" href="image/icons/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+
   <!--initalization from firebase code snippest-->
 
   <script src="https://www.gstatic.com/firebasejs/4.4.0/firebase.js"></script>
+
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
   <script>
     // Initialize Firebase
     var config = {
@@ -50,9 +76,14 @@
 
 </head>
 <body >
-<h1 align="center" style="color: white;border: 20px;">Firebase Auth QuickStart Demo</h1>
-<div class="fire-container">
-<div id="firebaseui-auth-container"></div>
-</div>
+  <div class="container">
+    <div 
+      <div>
+        <img class="responsive-img" src="image/logo.png" >
+      </div>
+      <div class="fire-container">
+        <div id="firebaseui-auth-container"></div>
+      </div>
+  </div>
 </body>
 </html>
