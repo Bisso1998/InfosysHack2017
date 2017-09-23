@@ -10,6 +10,8 @@
 
     <!--initalization from firebase code snippest-->
     <script src="https://www.gstatic.com/firebasejs/4.4.0/firebase.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
     <script>
       // Initialize Firebase
       var config = {
@@ -22,21 +24,76 @@
       };
       firebase.initializeApp(config);
     </script>
+    <!-- Compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
 
+<!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
     <!-- Google APIs -->
     <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <link rel="manifest" href="assets/manifest.json">
-
     <!-- Local APIs -->
     <script type="text/javascript" src="assets/llqrcode.js"></script>
     <script type="text/javascript" src="assets/webqr.js"></script>
     <script type="text/javascript" src="assets/script.js"></script>
     <script type="text/javascript" src="assets/firebase.js"></script>
-
 </head>
-
 <body>
+  <nav style="color: blue">
+      <div class="nav-wrapper" style="color: blue; background-color: #008975;">
+        <a href="#" class="brand-logo" style="font-size: 20px;">SmartQ-Labs</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a href="collapsible.html"><i class="material-icons">accessibility</i></a></li>
+          <li><a href="badges.html"><i class="material-icons">arrow_back</i></a></li>\
+        </ul>
+      </div>
+    </nav>
+    <!-- <div class="card-image" id="user-image"> -->
+  <div class="container  center-align" >
+    <div class="row">
+        <div class="col s12 m6">
+          <div class="card darken-1" style="background-color: #00BF9A">
+            <div class="card-content white-text">
+              <div class=" materialboxed center-align"   data-caption="A picture of a way with a group of trees in a park" width="250" id="user-image">
+                <br><br>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>
+    <!-- <div class="container">
+      <div class="col s12 m7">
+      <h2 class="header">Horizontal Card</h2>
+      <div class="card horizontal small">
+        <div class="card-image">
+        </div>
+        <div class="card-stacked">
+          <div class="card-content">
+            <p>I am a very simple card. I am good at containing small bits of information.</p>
+          </div>
+          <div class="card-action">
+            <a href="#">This is a link</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> -->
+    </div>
+
+    <!-- <div class="row">
+    <div class="col s12 m6">
+      <div class="card">
+        <div class="card-image" id="user-image">
+
+          <span class="card-title">Card Title</span>
+          <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
+        </div>
+        <div class="card-content">
+          <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
+        </div>
+      </div>
+    </div>
+  </div> -->
     <div id="main">
         <div id="welcome">
         </div>
@@ -71,20 +128,19 @@
                 <tr>
                     <td colspan="3" align="center">
                         <div id="result"></div>
-
                     </td>
                 </tr>
             </table>
         </div>
     </div>
     <div id="jsonData" style="display: none">
-      <h1>HELLO</h1>
+
+      <h1>HELLO </h1>
 
     </div>
     <script>
     $(document).ready(function(){
         console.log("The jQuery is working");
-
     });
       var flag =0;
       function checkDiv()
@@ -117,27 +173,13 @@
          {
            clearInterval(myTimer);
          }
-
      }
-
         var myTimer = setInterval('checkDiv()', 1000); // this will reload page after every 5 secounds; Method II
-
-
     </script>
     <canvas id="qr-canvas" width="800" height="600"></canvas>
     <script type="text/javascript">
     load();
     </script>
-  <script>
-  if ('serviceWorker' in navigator) {
-    console.log("Will the service worker register?");
-    navigator.serviceWorker.register('service-worker.js')
-      .then(function(reg){
-        console.log("Yes, it did.");
-      }).catch(function(err) {
-        console.log("No it didn't. This happened: ", err)
-      });
-  }
-</script>
+
 </body>
 </html>

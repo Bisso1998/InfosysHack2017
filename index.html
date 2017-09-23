@@ -1,58 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>Firebase</title>
-  <style type="text/css">
-   #fire-container{
-    background: grey;
-    border:black solid;
-   } 
-  </style>
-  <!--initalization from firebase code snippest-->
 
-  <script src="https://www.gstatic.com/firebasejs/4.4.0/firebase.js"></script>
-  <script>
+<head>
+    <meta charset="utf-8">
+    <title>Firebase</title>
+    <style type="text/css">
+    #fire-container {
+        background: grey;
+        border: black solid;
+    }
+    </style>
+    <style>
+    .demo-card-wide.mdl-card {
+        width: 512px;
+    }
+
+    .demo-card-wide>.mdl-card__title {
+        color: #fff;
+        height: 176px;
+        background: url('http://wallpapersvenue.com/wp-content/uploads/2017/07/Google-Desktop-Background-Wallpapers.png') center / cover;
+    }
+
+    .demo-card-wide>.mdl-card__menu {
+        color: #fff;
+    }
+    </style>
+    <link rel="apple-touch-icon" sizes="57x57" href="image/icons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="image/icons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="image/icons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="image/icons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="image/icons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="image/icons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="image/icons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="image/icons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="image/icons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="image/icons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="image/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="image/icons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="image/icons/favicon-16x16.png">
+    <link rel="manifest" href="image/icons/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <!--initalization from firebase code snippest-->
+    <script src="https://www.gstatic.com/firebasejs/4.4.0/firebase.js"></script>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <script>
     // Initialize Firebase
     var config = {
-      apiKey: "AIzaSyBr9XlaGm0HONMXSt9bfV6qQgONDxr3gpk",
-      authDomain: "smartqlabs.firebaseapp.com",
-      databaseURL: "https://smartqlabs.firebaseio.com",
-      projectId: "smartqlabs",
-      storageBucket: "smartqlabs.appspot.com",
-      messagingSenderId: "503779783045"
+        apiKey: "AIzaSyBr9XlaGm0HONMXSt9bfV6qQgONDxr3gpk",
+        authDomain: "smartqlabs.firebaseapp.com",
+        databaseURL: "https://smartqlabs.firebaseio.com",
+        projectId: "smartqlabs",
+        storageBucket: "smartqlabs.appspot.com",
+        messagingSenderId: "503779783045"
     };
     firebase.initializeApp(config);
-  </script>
-
-<!--the code below initializes the signin widget from firebaseUI web-->
-
+    </script>
+    <!--the code below initializes the signin widget from firebaseUI web-->
     <script src="https://cdn.firebase.com/libs/firebaseui/1.0.0/firebaseui.js"></script>
     <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/1.0.0/firebaseui.css" />
     <script type="text/javascript">
-      // FirebaseUI config.
-      var uiConfig = {
+    // FirebaseUI config.
+    var uiConfig = {
         signInSuccessUrl: 'main.html',
         signInOptions: [
-          // Leave the lines as is for the providers you want to offer your users.
-          firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-          firebase.auth.EmailAuthProvider.PROVIDER_ID
+            // Leave the lines as is for the providers you want to offer your users.
+            firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+            firebase.auth.EmailAuthProvider.PROVIDER_ID
         ],
         // Terms of service url.
         tosUrl: '<your-tos-url>'
-      };
-      // Initialize the FirebaseUI Widget using Firebase.
-      var ui = new firebaseui.auth.AuthUI(firebase.auth());
-      // The start method will wait until the DOM is loaded.
-      ui.start('#firebaseui-auth-container', uiConfig);
+    };
+    // Initialize the FirebaseUI Widget using Firebase.
+    var ui = new firebaseui.auth.AuthUI(firebase.auth());
+    // The start method will wait until the DOM is loaded.
+    ui.start('#firebaseui-auth-container', uiConfig);
     </script>
-
-
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
 </head>
-<body >
-<h1 align="center" style="color: white;border: 20px;">Firebase Auth QuickStart Demo</h1>
-<div class="fire-container">
-<div id="firebaseui-auth-container"></div>
-</div>
+
+<body>
+    <h1 align="center" style="color: white;border: 20px;">Firebase Auth QuickStart Demo</h1>
+    <div class="fire-container">
+        <div id="firebaseui-auth-container"></div>
+    </div>
 </body>
+
 </html>
