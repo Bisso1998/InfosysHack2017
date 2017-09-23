@@ -137,9 +137,30 @@
     </div>
     <div id="jsonData" style="display: none">
 
-      <h1>HELLO </h1>
 
     </div>
+    <!-- <div class="container  center-align" >
+      <div class="row">
+          <div class="col s12 m6">
+            <div class="card darken-1" style="background-color: #00AA8D">
+              <div class="card-content white-text">
+                <div class="row">
+                  <div class="col s6" style="border-right: 3px solid white">
+                    03
+                    <br>
+                    Queue Number
+                  </div>
+                  <div class="col s6">
+                    K16
+                    <br>
+                    Shop Number
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+  </div> -->
     <script>
     $(document).ready(function(){
         console.log("The jQuery is working");
@@ -162,11 +183,11 @@
                  }).done(function (data) {
                      console.log(data);
                      $("#main").hide(1000);
-
-                     console.log(data.name);
-                     $("#jsonData").append("<h6> Queue Hash: " +text + "</h6> <br>");
-
-                     $("#jsonData").append("<b>Queue Number:</b>" + data.queue.queue_no + " Counter Id:  " + data.queue.counter_id );
+                     $("#jsonData").append('<div class="container center-align" > <div class="row"> <div class="col s12 m6"> <div class="card darken-1" style="background-color: #00AA8D"> <div class="card-content white-text"> <div class="row"> <div class="col s6" style="border-right: 3px solid white"> '  + data.queue.queue_no +  '<br> Queue Number </div> <div class="col s6">'   + data.queue.counter_id + ' <br> Shop Number </div> </div> </div> </div> </div> </div> </div>')
+                    //  console.log(data.name);
+                    //  $("#jsonData").append("<h6> Queue Hash: " +text + "</h6> <br>");
+                     //
+                    //  $("#jsonData").append("<b>Queue Number:</b>" + data.queue.queue_no + " Counter Id:  " + data.queue.counter_id );
                      $("#jsonData").show(100);
 
                  });
