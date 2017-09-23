@@ -3,27 +3,18 @@
 
 <head>
     <meta charset="utf-8">
+    <meta name="theme-color" content="#008975"/>
     <title>Login - Smart QLabs</title>
     <style type="text/css">
     #fire-container {
         background: grey;
         border: black solid;
     }
-    </style>
-    <style>
-    .demo-card-wide.mdl-card {
-        width: 512px;
+    body {
+      background: #
     }
 
-    .demo-card-wide>.mdl-card__title {
-        color: #fff;
-        height: 176px;
-        background: url('http://wallpapersvenue.com/wp-content/uploads/2017/07/Google-Desktop-Background-Wallpapers.png') center / cover;
-    }
 
-    .demo-card-wide>.mdl-card__menu {
-        color: #fff;
-    }
     </style>
     <link rel="apple-touch-icon" sizes="57x57" href="image/icons/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="image/icons/apple-icon-60x60.png">
@@ -80,16 +71,11 @@
     // The start method will wait until the DOM is loaded.
     ui.start('#firebaseui-auth-container', uiConfig);
     </script>
-    <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
 </head>
 
 <body>
     <div class="container">
-      <div class="row">
-          <div class="m12 s12 l12 xl12 fire-container">
+          <div class="fire-container">
               <div id="firebaseui-auth-container"></div>
           </div>
       </div>
