@@ -162,45 +162,7 @@
           </div>
         </div>
   </div> -->
-    <script>
-    $(document).ready(function(){
-        console.log("The jQuery is working");
-    });
-      var flag =0;
-      function checkDiv()
-     {
-         var text = $( "#result" ).text();
-         console.log("Prev text = " + text);
-         if(text.length>0)
-         {
-           console.log("text is: " + text);
-           console.log("STOPPEDDDDD");
-           
-           flag =1;
-             $.ajax({
-                     type: "GET", 		//GET or POST
-                     url: 'https://api.myjson.com/bins/12pgxt', 		// Location of the service
-                     dataType: "json", 	//Expected data format from server
-                     processdata: true 	//True or False
-                 }).done(function (data) {
-                     console.log(data);
-                     $("#main").hide(1000);
-                     $("#jsonData").append('<div class="container center-align" > <div class="row"> <div class="col s12 m6"> <div class="card darken-1" style="background-color: #00AA8D"> <div class="card-content white-text"> <div class="row"> <div class="col s6" style="border-right: 3px solid white"> '  + data.queue.queue_no +  '<br> Queue Number </div> <div class="col s6">'   + data.queue.counter_id + ' <br> Shop Number </div> </div> </div> </div> </div> </div> </div>')
-                    //  console.log(data.name);
-                    //  $("#jsonData").append("<h6> Queue Hash: " +text + "</h6> <br>");
-                     //
-                    //  $("#jsonData").append("<b>Queue Number:</b>" + data.queue.queue_no + " Counter Id:  " + data.queue.counter_id );
-                     $("#jsonData").show(100);
 
-                 });
-         }
-         if(flag==1)
-         {
-           clearInterval(myTimer);
-         }
-     }
-        var myTimer = setInterval('checkDiv()', 1000); // this will reload page after every 5 secounds; Method II
-    </script>
     <canvas id="qr-canvas" width="800" height="600"></canvas>
     <script type="text/javascript">
     load();
@@ -218,6 +180,66 @@
         });
       }
     </script>
+    <script>
+    $(document).ready(function(){
+        console.log("The jQuery is working");
+    });
 
+
+    var flag =0;
+    function checkDiv()
+    {
+       var text = $( "#result" ).text();
+       console.log("Prev text = " + text);
+       if(text.length>0)
+       {
+         console.log("text is: " + text);
+         console.log("STOPPEDDDDD");
+
+         flag =1;
+         var nameSend = $( "#myNameG" ).text();
+         var mailSend =  $("#myMailG" ).text();
+           $.ajax({
+                   type: "GET",
+                   url: 'https://smartqlabs.com/main/api/mobile/scan.php',
+                   dataType: "json",
+                   data : {
+                     "qr_data" : text,
+                     "email" : mailSend,
+                     "name" : nameSend
+                 },
+                   processdata: true
+               }).done(function (data) {
+                   console.log(data);
+                   $("#main").hide(1000);
+                   $("#jsonData").append('<div class="container center-align" > <div class="row"> <div class="col s12 m6"> <div class="card darken-1" style="background-color: #00AA8D"> <div class="card-content white-text"> <div class="row"> <div class="col s6" style="border-right: 3px solid white"> '  + data.queue.queue_no +  '<br> Queue Number </div> <div class="col s6">'   + data.queue.counter_id + ' <br> Shop Number </div> </div> </div> </div> </div> </div> </div>')
+                   $("#jsonData").show(100);
+
+                   console.log("Text is: " + text);
+                   console.log("Name Send value: " +  nameSend);
+                   console.log("Mail Send Value: " +  mailSend);
+               });
+       }
+       if(flag==1)
+       {
+         clearInterval(myTimer);
+       }
+    }
+    // console.log("The mailid is: " + email);
+    // console.log("The mailid is: " + userName);
+
+      var myTimer = setInterval('checkDiv()', 1000); // this will reload page after every 5 secounds; Method II
+
+    </script>
+<script type="text/javascript">
+
+</script>
+<script type="text/javascript">
+console.log("We are entering the script");
+
+
+
+
+</script>
 </body>
 </html>

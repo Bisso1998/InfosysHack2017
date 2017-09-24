@@ -13,13 +13,16 @@ firebase.auth().onAuthStateChanged(function(user) {
     //Name
     var userName = user.displayName;
     var name = document.createElement("h5");
-    var node = document.createTextNode('Welcome, '+ userName);
+    name.id = 'myNameG';
+    var node = document.createTextNode(userName);
     name.appendChild(node);
     document.getElementById("user-image").appendChild(name);
     console.log(userName);
 
+
     //Email
-    var userMail = document.createElement("p");
+    var userMail = document.createElement("h6");
+    userMail.id = 'myMailG';
     var email = document.createTextNode(user.email);
     userMail.appendChild(email);
     document.getElementById('user-image').appendChild(userMail);
@@ -28,10 +31,18 @@ firebase.auth().onAuthStateChanged(function(user) {
   } else {
     // No user is signed in
     console.log("no user signed in");
+
   }
+
+// function getName()
+//   {
+//     console.log("USER NAME IS" + userName);
+//     return userName;
+//   }
+
 });
 
-
+// console.log("Get Name is: " + getName());
 
 //   Getting user info in firebase when user is signed in
 //   name = user.displayName;
