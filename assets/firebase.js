@@ -4,6 +4,7 @@ firebase.auth().onAuthStateChanged(function(user) {
   	//Photo
   	var image = document.createElement("IMG");
   	    image.setAttribute("src", user.photoURL);
+        
   	    image.setAttribute("width", "100");
   	    image.setAttribute("border-radius", "50%");
   	    image.setAttribute("height", "100");
