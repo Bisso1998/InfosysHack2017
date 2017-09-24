@@ -2,13 +2,25 @@ firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
     // User is signed in.
   	//Photo
-  	var image = document.createElement("IMG");
-  	    image.setAttribute("src", user.photoURL);
+    if ( user.photoURL != null)
+    {
+        var image = document.createElement("IMG");
+        image.setAttribute("src", user.photoURL);
+        console.log("PHOTO URL is: " + user.photoURL);
+        console.log(user.photoURL);
+      }
+    else {
+      var image = document.createElement("IMG");
+      image.setAttribute("src", "https://rajeshindia-production.s3.amazonaws.com/uploads/management/image/3/Dummy_Image_Man.jpg");
+      console.log("PHOTO URL is: " + user.photoURL);
+      console.log(user.photoURL);
+    }
   	    image.setAttribute("width", "100");
   	    image.setAttribute("border-radius", "50%");
   	    image.setAttribute("height", "100");
   	    image.setAttribute("alt", "Rowhit Swami");
   	document.getElementById("user-image").appendChild(image);
+
 
     //Name
     var userName = user.displayName;
