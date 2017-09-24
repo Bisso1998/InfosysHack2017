@@ -1,7 +1,7 @@
-body {
+/*body {
     width: 100%;
 
-}
+}*/
 
 img {
     border: 0;
@@ -109,3 +109,6 @@ li a {
     padding: 0;
 }
 
+.firebaseui-idp-button {
+  
+}
