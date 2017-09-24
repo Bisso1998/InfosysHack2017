@@ -1,10 +1,6 @@
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
     // User is signed in.
-
-
-
-
   	//Photo
   	var image = document.createElement("IMG");
   	    image.setAttribute("src", user.photoURL);
@@ -15,37 +11,29 @@ firebase.auth().onAuthStateChanged(function(user) {
   	document.getElementById("user-image").appendChild(image);
 
     //Name
+    var userName = user.displayName;
     var name = document.createElement("h5");
-    var node = document.createTextNode('Welcome, '+ user.displayName)
+    var node = document.createTextNode('Welcome, '+ userName);
     name.appendChild(node);
     document.getElementById("user-image").appendChild(name);
+    console.log(userName);
 
+    //Email
+    var userMail = document.createElement("p");
+    var email = document.createTextNode(user.email);
+    userMail.appendChild(email);
+    document.getElementById('user-image').appendChild(userMail);
+    console.log(email);
 
-  	// Email
-  	// var email = document.createElement("P");
-  	// var content = createTextNode(user.email);
-  	// email.appendChild(content);
-  	// document.getElementById('welcome').appendChild(email);
   } else {
-    // No user is signed in.
+    // No user is signed in
     console.log("no user signed in");
   }
 });
 
 
 
-// auth2 is initialized with gapi.auth2.init() and a user is signed in.
-
-if (auth2.isSignedIn.get()) {
-  var profile = auth2.currentUser.get().getBasicProfile();
-  console.log('ID: ' + profile.getId());
-  console.log('Full Name: ' + profile.getName());
-  console.log('Given Name: ' + profile.getGivenName());
-  console.log('Family Name: ' + profile.getFamilyName());
-  console.log('Image URL: ' + profile.getImageUrl());
-  console.log('Email: ' + profile.getEmail());
-}
-
+//   Getting user info in firebase when user is signed in
 //   name = user.displayName;
 //   email = user.email;
 //   photoUrl = user.photoURL;
