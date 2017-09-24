@@ -1,10 +1,6 @@
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
     // User is signed in.
-
-
-
-
   	//Photo
   	var image = document.createElement("IMG");
   	    image.setAttribute("src", user.photoURL);
@@ -15,23 +11,29 @@ firebase.auth().onAuthStateChanged(function(user) {
   	document.getElementById("user-image").appendChild(image);
 
     //Name
+    var userName = user.displayName;
     var name = document.createElement("h5");
-    var node = document.createTextNode('Welcome, '+ user.displayName)
+    var node = document.createTextNode('Welcome, '+ userName);
     name.appendChild(node);
     document.getElementById("user-image").appendChild(name);
+    console.log(userName);
 
+    //Email
+    var userMail = document.createElement("p");
+    var email = document.createTextNode(user.email);
+    userMail.appendChild(email);
+    document.getElementById('user-image').appendChild(userMail);
+    console.log(email);
 
-  	// Email
-  	// var email = document.createElement("P");
-  	// var content = createTextNode(user.email);
-  	// email.appendChild(content);
-  	// document.getElementById('welcome').appendChild(email);
   } else {
-    // No user is signed in.
+    // No user is signed in
     console.log("no user signed in");
   }
 });
 
+
+
+//   Getting user info in firebase when user is signed in
 //   name = user.displayName;
 //   email = user.email;
 //   photoUrl = user.photoURL;
